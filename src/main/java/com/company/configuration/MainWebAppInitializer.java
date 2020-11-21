@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 public class MainWebAppInitializer implements WebApplicationInitializer {
+
+    /* Application Context & Dispatcher Servlet */
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
