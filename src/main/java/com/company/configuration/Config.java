@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.company")
-@EnableJpaRepositories(basePackages = "com.company.repository.impl")
+@EnableJpaRepositories(basePackages = "com.company.repository")
 @EnableTransactionManagement
 public class Config implements WebMvcConfigurer {
 
