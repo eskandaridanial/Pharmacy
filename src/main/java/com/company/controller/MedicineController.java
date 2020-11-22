@@ -4,9 +4,7 @@ import com.company.model.Medicine;
 import com.company.service.MedicineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -31,5 +29,11 @@ public class MedicineController {
         Map<String , List<Medicine>> map = new HashMap<>();
         map.put("list" , medicineService.findAll());
         return new ModelAndView("medicine_list" , map);
+    }
+
+    @PostMapping("/remove")
+    public String remove(@RequestParam Long id){
+        medicineService.remove(id);
+        return "redirect:/medicine/list";
     }
 }

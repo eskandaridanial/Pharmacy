@@ -45,8 +45,11 @@
                 <th><%=medicine.getCode()%></th>
                 <th><%=medicine.getPrice()%></th>
                 <th><%=medicine.getDescription()%></th>
-                <th></th>
-                <th></th>
+                <th>
+                    <form method="post" action="remove">
+                        <button type="submit" name="id" value="<%=medicine.getId()%>">Remove</button>
+                    </form>
+                </th>
             </tr>
             <%
                 }

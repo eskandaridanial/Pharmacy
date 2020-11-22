@@ -24,4 +24,9 @@ public class MedicineServiceImpl implements MedicineService {
     public List<Medicine> findAll() {
         return medicineRepository.findAll();
     }
+
+    @Override
+    public void remove(Long id) {
+        medicineRepository.deleteById(id);
+    }
 }

@@ -9,4 +9,6 @@ public interface MedicineService {
     void save(Medicine medicine);
 
     List<Medicine> findAll();
+
+    void remove(Long id);
 }
