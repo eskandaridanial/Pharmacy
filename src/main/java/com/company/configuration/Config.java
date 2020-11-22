@@ -29,6 +29,7 @@ public class Config implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/add_medicine").setViewName("add_medicine");
+        registry.addViewController("/update_medicine").setViewName("update_medicine");
     }
 
     /* View Resolver */

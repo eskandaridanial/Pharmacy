@@ -11,4 +11,8 @@ public interface MedicineService {
     List<Medicine> findAll();
 
     void remove(Long id);
+
+    void update(Long id , String name , Double price , String description);
+
+    Medicine findBeforeUpdate(Long id);
 }

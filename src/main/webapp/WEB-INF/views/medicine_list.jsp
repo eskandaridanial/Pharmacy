@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Medicine List</title>
     <style>
         .container {
@@ -48,6 +49,11 @@
                 <th>
                     <form method="post" action="remove">
                         <button type="submit" name="id" value="<%=medicine.getId()%>">Remove</button>
+                    </form>
+                </th>
+                <th>
+                    <form method="get" action="find_before_update">
+                        <button type="submit" name="id" value="<%=medicine.getId()%>">Update</button>
                     </form>
                 </th>
             </tr>

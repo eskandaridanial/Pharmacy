@@ -21,7 +21,7 @@ public class MedicineController {
     @PostMapping("/add")
     public String add(Medicine medicine){
         medicineService.save(medicine);
-        return "home";
+        return "add_medicine";
     }
 
     @GetMapping("/list")
@@ -34,6 +34,20 @@ public class MedicineController {
     @PostMapping("/remove")
     public String remove(@RequestParam Long id){
         medicineService.remove(id);
+        return "redirect:/medicine/list";
+    }
+
+    @GetMapping("/find_before_update")
+    public ModelAndView findBeforeUpdate(@RequestParam Long id){
+        Map<String , Medicine> map = new HashMap<>();
+        map.put("medicine" , medicineService.findBeforeUpdate(id));
+        return new ModelAndView("update_medicine" , map);
+    }
+
+    @PostMapping("/update")
+    public String update(@RequestParam Long id , String name ,
+                         Double price , String description){
+        medicineService.update(id , name , price , description);
         return "redirect:/medicine/list";
     }
 }
