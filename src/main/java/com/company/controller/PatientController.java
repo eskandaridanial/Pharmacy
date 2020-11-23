@@ -64,4 +64,11 @@ public class PatientController {
         return "redirect:/patient/find_before_update?id=" + patientId;
 
     }
+
+    @GetMapping("/find")
+    public ModelAndView find(@RequestParam Long id){
+        Map<String , Patient> map = new HashMap<>();
+        map.put("patient" , patientService.find(id));
+        return new ModelAndView("patient_info" , map);
+    }
 }

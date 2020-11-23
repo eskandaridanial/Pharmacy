@@ -57,6 +57,11 @@
                     <button type="submit" name="id" value="<%=patient.getId()%>">Update</button>
                 </form>
             </th>
+            <th>
+                <form method="get" action="find">
+                    <button type="submit" name="id" value="<%=patient.getId()%>">Information</button>
+                </form>
+            </th>
         </tr>
         <%
             }
