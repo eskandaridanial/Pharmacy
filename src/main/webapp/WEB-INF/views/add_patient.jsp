@@ -4,16 +4,17 @@
 <head>
     <title>Add Patient</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.duplicate.js"></script>
 </head>
 <style>
     .container {
         margin: auto;
         padding: 10px;
-        width: 700px;
+        width: 800px;
         text-align: center;
         border: 1px black solid;
     }
-    .box , .rescription{
+    .box , .prescription{
         margin: 10px;
         padding: 10px;
         width: 200px;
@@ -32,12 +33,6 @@
     }
     #radio {
         margin: 10px;
-    }
-    #add_rescription {
-        padding: 10px;
-        text-align: center;
-        width: 30px;
-        height: 30px;
     }
 </style>
 <body>
@@ -61,9 +56,15 @@
             <h2>Add Prescription</h2>
             <hr>
 
-            <h3>You Need To Add At Least One Prescription<button id="add_rescription" type="button">+</button></h3>
+            <h3>You Need To Add At Least One Prescription<button data- id="add_prescription" type="button">+</button></h3>
 
-            <div id="rescription"></div>
+            <div id="prescription">
+                <div class="added" id="added_1">
+                    <input class="prescription" type="number" name="code" placeholder="code" required>
+                    <input class="prescription" type="date" name="creationDate" placeholder="Creation Date" required>
+                    <input class="prescription" type="date" name="visitDate" placeholder="Visit Date" required>
+                </div>
+            </div>
 
             <button type="submit">Submit</button>
             <button><a href="index.jsp">Cancel</a></button>
@@ -71,10 +72,29 @@
     </div>
     <script>
         $(document).ready(function(){
-            $("#add_rescription").click(function () {
-                $("#rescription").append("<input class=\"rescription\" type=\"number\" name=\"code\" placeholder=\"code\" required>\n" +
-                    "                <input class=\"rescription\" type=\"date\" name=\"creationDate\" placeholder=\"Creation Date\" required>\n" +
-                    "                <input class=\"rescription\" type=\"date\" name=\"visitDate\" placeholder=\"Visit Date\" required>")
+            $("#add_prescription").click(function () {
+
+                var total_element = $(".added").length;
+
+                var lastid = $(".added:last").attr("id");
+                var split_id = lastid.split("_");
+                var nextindex = Number(split_id[1]) + 1;
+
+
+                $("#prescription").append("<div class=\"added\" id=\"added_" + nextindex + "\">\n" +
+                    "                    <input class=\"prescription\" type=\"number\" name=\"code\" placeholder=\"code\" required>\n" +
+                    "                    <input class=\"prescription\" type=\"date\" name=\"creationDate\" placeholder=\"Creation Date\" required>\n" +
+                    "                    <input class=\"prescription\" type=\"date\" name=\"visitDate\" placeholder=\"Visit Date\" required>\n" +
+                    "                    <button class=\"remove\" id=\"remove_" + nextindex + "\" type=\"button\">-</button>\n" +
+                    "                </div>")
+            })
+
+            $("#prescription").on('click' , '.remove' , function () {
+                var id = this.id;
+                var split_id = id.split("_");
+                var deleteindex = split_id[1];
+
+                $("#added_" + deleteindex).remove()
             })
         })
     </script>
