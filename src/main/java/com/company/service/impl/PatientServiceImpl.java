@@ -52,4 +52,9 @@ public class PatientServiceImpl implements PatientService {
         }
         return prescriptions;
     }
+
+    @Override
+    public List<Patient> findAll() {
+        return patientRepository.findAll();
+    }
 }
