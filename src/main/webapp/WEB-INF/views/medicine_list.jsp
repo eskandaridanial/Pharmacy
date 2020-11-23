@@ -3,21 +3,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Medicine List</title>
     <style>
         .container {
             margin: auto;
+            padding: 10px;
             width: 800px;
             text-align: center;
             border: 1px black solid;
         }
         table , thead , tbody , tr , th{
             margin: auto;
-            margin-bottom: 10px;
             padding: 20px;
             border: 1px black solid;
             border-collapse: collapse;
+        }
+        thead {
+            background-color: #f8f8f8;
         }
     </style>
 </head>

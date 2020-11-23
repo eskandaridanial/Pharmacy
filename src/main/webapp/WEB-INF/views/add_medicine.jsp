@@ -6,8 +6,8 @@
 <style>
     .container {
         margin: auto;
+        padding: 10px;
         width: 400px;
-        height: 500px;
         text-align: center;
         border: 1px black solid;
     }
@@ -22,9 +22,11 @@
         padding: 10px;
         margin: 10px;
         width: 90px;
+        color: black;
     }
     a {
         text-decoration: none;
+        color: black;
     }
 </style>
 <body>
