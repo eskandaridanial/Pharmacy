@@ -44,4 +44,24 @@ public class PatientController {
         patientService.remove(id);
         return "redirect:/patient/list";
     }
+
+    @GetMapping("/find_before_update")
+    public ModelAndView findBeforeUpdate(@RequestParam Long id){
+        Map<String , Patient> map = new HashMap<>();
+        map.put("patient" , patientService.find(id));
+        return new ModelAndView("update_patient" , map);
+    }
+
+    @PostMapping("/update_patient_prescriptions")
+    public String updatePatientPrescriptions(@RequestParam Long id , PrescriptionFormDto dto){
+        patientService.customUpdate(id , dto);
+        return "redirect:/patient/find_before_update?id=" + id;
+    }
+
+    @PostMapping("/remove_prescription")
+    public String remove(@RequestParam Long prescriptionId , @RequestParam Long patientId){
+        prescriptionService.remove(prescriptionId);
+        return "redirect:/patient/find_before_update?id=" + patientId;
+
+    }
 }

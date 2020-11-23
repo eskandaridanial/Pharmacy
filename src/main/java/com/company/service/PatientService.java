@@ -9,6 +9,8 @@ public interface PatientService {
 
     void customSave(Patient patient , PrescriptionFormDto dto);
 
+    void customUpdate(Long id , PrescriptionFormDto prescriptionFormDto);
+
     void save(Patient patient);
 
     Patient find(Long id);

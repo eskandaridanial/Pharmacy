@@ -40,7 +40,7 @@ public class MedicineController {
     @GetMapping("/find_before_update")
     public ModelAndView findBeforeUpdate(@RequestParam Long id){
         Map<String , Medicine> map = new HashMap<>();
-        map.put("medicine" , medicineService.findBeforeUpdate(id));
+        map.put("medicine" , medicineService.find(id));
         return new ModelAndView("update_medicine" , map);
     }
 

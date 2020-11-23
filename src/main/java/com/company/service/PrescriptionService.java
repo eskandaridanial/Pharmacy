@@ -5,4 +5,6 @@ import com.company.model.Prescription;
 public interface PrescriptionService {
 
     void save(Prescription prescription);
+
+    void remove(Long id);
 }

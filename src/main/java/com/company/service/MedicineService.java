@@ -14,5 +14,5 @@ public interface MedicineService {
 
     void update(Long id , String name , Double price , String description);
 
-    Medicine findBeforeUpdate(Long id);
+    Medicine find(Long id);
 }

@@ -16,4 +16,9 @@ public class PrescriptionServiceImpl implements PrescriptionService {
     public void save(Prescription prescription) {
         prescriptionRepository.save(prescription);
     }
+
+    @Override
+    public void remove(Long id) {
+        prescriptionRepository.deleteById(id);
+    }
 }

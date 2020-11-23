@@ -44,7 +44,7 @@
             <input type="number" name="price" placeholder="price" value="<%=medicine.getPrice()%>"><br>
             <textarea name="description"><%=medicine.getDescription()%></textarea><br>
             <button type="submit">Update</button>
-            <button type="submit"><a href="medicine_list">Cancel</a></button>
+            <button type="submit"><a href="list">Cancel</a></button>
         </form>
     </div>
 </body>

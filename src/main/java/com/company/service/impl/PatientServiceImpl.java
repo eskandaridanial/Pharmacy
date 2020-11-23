@@ -40,6 +40,25 @@ public class PatientServiceImpl implements PatientService {
         return optional.isPresent() ? optional.get() : null;
     }
 
+    @Override
+    public List<Patient> findAll() {
+        return patientRepository.findAll();
+    }
+
+    @Override
+    public void remove(Long id) {
+        patientRepository.deleteById(id);
+    }
+
+    @Override
+    public void customUpdate(Long id, PrescriptionFormDto dto) {
+        Patient helperPatient = find(id);
+        for (Prescription prescription : populatePrescriptions(dto)){
+            helperPatient.addPrescription(prescription);
+        }
+        save(helperPatient);
+    }
+
     private List<Prescription> populatePrescriptions(PrescriptionFormDto dto){
         List<Prescription> prescriptions = new ArrayList<>();
         for(int i = 0 ; i < dto.getCode().length ; i++){
@@ -51,15 +70,5 @@ public class PatientServiceImpl implements PatientService {
             prescriptions.add(prescription);
         }
         return prescriptions;
-    }
-
-    @Override
-    public List<Patient> findAll() {
-        return patientRepository.findAll();
-    }
-
-    @Override
-    public void remove(Long id) {
-        patientRepository.deleteById(id);
     }
 }

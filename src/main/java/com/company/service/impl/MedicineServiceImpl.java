@@ -34,7 +34,7 @@ public class MedicineServiceImpl implements MedicineService {
     @Override
     public void update(Long id , String name ,
                        Double price , String description) {
-        Medicine medicine = findBeforeUpdate(id);
+        Medicine medicine = find(id);
         medicine.setName(name);
         medicine.setPrice(price);
         medicine.setDescription(description);
@@ -42,7 +42,7 @@ public class MedicineServiceImpl implements MedicineService {
     }
 
     @Override
-    public Medicine findBeforeUpdate(Long id) {
+    public Medicine find(Long id) {
         Optional<Medicine> optional = medicineRepository.findById(id);
         return optional.isPresent() ? optional.get() : null;
     }
