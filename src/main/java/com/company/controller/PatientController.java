@@ -21,6 +21,6 @@ public class PatientController {
     @PostMapping("/add")
     public String add(Patient patient, PrescriptionFormDto dto) {
         patientService.customSave(patient, dto);
-        return "add_patient";
+        return "redirect:/add_patient";
     }
 }

@@ -50,7 +50,7 @@
                 <th><%=medicine.getDescription()%></th>
                 <th>
                     <form method="post" action="remove">
-                        <button type="submit" name="id" value="<%=medicine.getId()%>">Remove</button>
+                        <button type="submit" name="id" onclick="return confirm('Are you sure you want to Remove?');" value="<%=medicine.getId()%>">Remove</button>
                     </form>
                 </th>
                 <th>

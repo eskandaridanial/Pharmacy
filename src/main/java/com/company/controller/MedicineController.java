@@ -21,7 +21,7 @@ public class MedicineController {
     @PostMapping("/add")
     public String add(Medicine medicine){
         medicineService.save(medicine);
-        return "add_medicine";
+        return "redirect:/add_medicine";
     }
 
     @GetMapping("/list")
