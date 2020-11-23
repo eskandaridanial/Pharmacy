@@ -15,7 +15,7 @@ public class Patient extends BaseModel {
     private String lastName;
     @Column(name = "gender" , nullable = false)
     private String gender;
-    @OneToMany(cascade = CascadeType.PERSIST , fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_patient")
     private List<Prescription> prescriptions;
 

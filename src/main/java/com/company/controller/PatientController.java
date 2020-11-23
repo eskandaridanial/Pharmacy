@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -36,5 +37,11 @@ public class PatientController {
         Map<String , List<Patient>> map = new HashMap<>();
         map.put("list" , patientService.findAll());
         return new ModelAndView("patient_list" , map);
+    }
+
+    @PostMapping("/remove")
+    public String remove(@RequestParam Long id){
+        patientService.remove(id);
+        return "redirect:/patient/list";
     }
 }
