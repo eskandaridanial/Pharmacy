@@ -33,6 +33,7 @@ public class Config implements WebMvcConfigurer {
         registry.addViewController("/add_patient").setViewName("add_patient");
         registry.addViewController("/update_patient").setViewName("update_patient");
         registry.addViewController("/find_medicine_by_name").setViewName("find_medicine_by_name");
+        registry.addViewController("/find_patient_by_full_name").setViewName("find_patient_by_full_name");
     }
 
     /* View Resolver */

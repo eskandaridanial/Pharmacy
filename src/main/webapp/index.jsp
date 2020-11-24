@@ -44,6 +44,9 @@
         <div class="sub">
             <a href="find_medicine_by_name">Find Medicine By Name</a>
         </div>
+        <div class="sub">
+            <a href="find_patient_by_full_name">Find Patient By Fullname</a>
+        </div>
     </div>
 </body>
 </html>

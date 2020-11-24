@@ -71,4 +71,11 @@ public class PatientController {
         map.put("patient" , patientService.find(id));
         return new ModelAndView("patient_info" , map);
     }
+
+    @GetMapping("/find_by_full_name")
+    public ModelAndView findByFirstNameAndLastName(String firstName , String lastName){
+        Map<String , Patient> map = new HashMap<>();
+        map.put("patient" , patientService.findByFirstNameAndLastName(firstName , lastName));
+        return new ModelAndView("find_patient_by_full_name" , map);
+    }
 }

@@ -71,4 +71,10 @@ public class PatientServiceImpl implements PatientService {
         }
         return prescriptions;
     }
+
+    @Override
+    public Patient findByFirstNameAndLastName(String firstName, String lastName) {
+        Optional<Patient> optional = patientRepository.findByFirstNameAndLastName(firstName , lastName);
+        return optional.isPresent() ? optional.get() : null;
+    }
 }

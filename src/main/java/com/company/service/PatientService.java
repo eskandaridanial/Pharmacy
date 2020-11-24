@@ -18,4 +18,6 @@ public interface PatientService {
     List<Patient> findAll();
 
     void remove(Long id);
+
+    Patient findByFirstNameAndLastName(String firstName , String lastName);
 }
