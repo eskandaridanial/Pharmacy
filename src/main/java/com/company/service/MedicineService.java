@@ -17,4 +17,6 @@ public interface MedicineService {
     Medicine find(Long id);
 
     Medicine findByName(String name);
+
+    Medicine findByCode(Long code);
 }

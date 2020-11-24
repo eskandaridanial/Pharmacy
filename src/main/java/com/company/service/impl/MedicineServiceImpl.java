@@ -52,4 +52,10 @@ public class MedicineServiceImpl implements MedicineService {
         Optional<Medicine> optional = medicineRepository.findByName(name);
         return optional.isPresent() ? optional.get() : null;
     }
+
+    @Override
+    public Medicine findByCode(Long code) {
+        Optional<Medicine> optional = medicineRepository.findByCode(code);
+        return optional.isPresent() ? optional.get() : null;
+    }
 }
