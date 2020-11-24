@@ -41,6 +41,9 @@
         <div class="sub">
             <a href="patient/list">Show Patient List</a>
         </div>
+        <div class="sub">
+            <a href="find_medicine_by_name">Find Medicine By Name</a>
+        </div>
     </div>
 </body>
 </html>

@@ -46,4 +46,10 @@ public class MedicineServiceImpl implements MedicineService {
         Optional<Medicine> optional = medicineRepository.findById(id);
         return optional.isPresent() ? optional.get() : null;
     }
+
+    @Override
+    public Medicine findByName(String name) {
+        Optional<Medicine> optional = medicineRepository.findByName(name);
+        return optional.isPresent() ? optional.get() : null;
+    }
 }

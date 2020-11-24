@@ -50,4 +50,11 @@ public class MedicineController {
         medicineService.update(id , name , price , description);
         return "redirect:/medicine/list";
     }
+
+    @GetMapping("/find_by_name")
+    public ModelAndView findByName(String name){
+        Map<String , Medicine> map = new HashMap<>();
+        map.put("medicine" , medicineService.findByName(name));
+        return new ModelAndView("find_medicine_by_name" , map);
+    }
 }

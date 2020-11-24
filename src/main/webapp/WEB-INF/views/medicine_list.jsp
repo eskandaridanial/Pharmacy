@@ -46,7 +46,7 @@
             <tr>
                 <th><%=medicine.getName()%></th>
                 <th><%=medicine.getCode()%></th>
-                <th><%=medicine.getPrice()%></th>
+                <th><%=medicine.getPrice()%>$</th>
                 <th><%=medicine.getDescription()%></th>
                 <th>
                     <form method="post" action="remove">
