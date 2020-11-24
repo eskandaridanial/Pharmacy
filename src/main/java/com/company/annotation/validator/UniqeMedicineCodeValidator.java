@@ -1,4 +1,4 @@
-package com.company.annotation.constraint;
+package com.company.annotation.validator;
 
 import com.company.annotation.UniqeMedicineCode;
 import com.company.service.MedicineService;

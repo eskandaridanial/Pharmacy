@@ -1,6 +1,6 @@
 package com.company.annotation;
 
-import com.company.annotation.constraint.UniqeMedicineNameValidator;
+import com.company.annotation.validator.UniqeMedicineNameValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
