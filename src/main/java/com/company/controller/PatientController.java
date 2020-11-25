@@ -1,7 +1,6 @@
 package com.company.controller;
 
 import com.company.dto.PrescriptionFormDto;
-import com.company.model.Medicine;
 import com.company.model.Patient;
 import com.company.service.PatientService;
 import com.company.service.PrescriptionService;
@@ -27,8 +26,8 @@ public class PatientController {
     private PrescriptionService prescriptionService;
 
     @PostMapping("/add")
-    public String add(Patient patient, PrescriptionFormDto dto) {
-        patientService.customSave(patient, dto);
+    public String add(Patient patient , PrescriptionFormDto dto) {
+        patientService.customSave(patient , dto);
         return "redirect:/add_patient";
     }
 
